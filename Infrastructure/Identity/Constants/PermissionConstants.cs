@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,5 +66,11 @@ namespace Infrastructure.Identity.Constants
             new SchoolPermission("Upgrade Tenants Subscription",SchoolAction.UpgradeSubscription,SchoolFeature.Tenants,IsRoot:true),
 
          ];
+
+        public static IReadOnlyList<SchoolPermission> All { get; } = new ReadOnlyCollection<SchoolPermission>(_allPermissios);
+        public static IReadOnlyList<SchoolPermission> Root { get; } = new ReadOnlyCollection<SchoolPermission>(_allPermissios.Where(x=> x.IsRoot==true).ToArray());
+        public static IReadOnlyList<SchoolPermission> Admin { get; } = new ReadOnlyCollection<SchoolPermission>(_allPermissios.Where(x=> !x.IsRoot==true).ToArray());
+        public static IReadOnlyList<SchoolPermission> Basic { get; } = new ReadOnlyCollection<SchoolPermission>(_allPermissios.Where(x=> x.IsBasic==true).ToArray());
+    
     }
 }
