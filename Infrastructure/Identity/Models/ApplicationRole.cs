@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Identity.Models
 {
-    public class ApplicaitonRole : IdentityRole
+    public class ApplicationRole : IdentityRole
     {
         public string Description { get; set; }
 

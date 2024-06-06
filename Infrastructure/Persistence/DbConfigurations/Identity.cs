@@ -20,9 +20,9 @@ namespace Infrastructure.Persistence.DbConfigurations
         }
     }
 
-    internal class ApplicationRoleConfig : IEntityTypeConfiguration<ApplicaitonRole>
+    internal class ApplicationRoleConfig : IEntityTypeConfiguration<ApplicationRole>
     {
-        public void Configure(EntityTypeBuilder<ApplicaitonRole> builder)
+        public void Configure(EntityTypeBuilder<ApplicationRole> builder)
         {
             builder.ToTable("Roles", SchemaNames.Identity)
                     .IsMultiTenant()

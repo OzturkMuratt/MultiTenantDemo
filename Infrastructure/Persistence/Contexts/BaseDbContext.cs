@@ -7,7 +7,7 @@ namespace Infrastructure.Persistence.Contexts
 {
     public abstract class BaseDbContext :
         MultiTenantIdentityDbContext<ApplicationUser
-            , ApplicaitonRole
+            , ApplicationRole
             , string, IdentityUserClaim<string>
             , IdentityUserRole<string>
             , IdentityUserLogin<string>
